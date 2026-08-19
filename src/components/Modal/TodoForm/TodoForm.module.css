@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b4b5c;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #d4d4d8;
+  border-radius: 8px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.error {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: -8px;
+}
+
+.inputError {
+  border-color: #ef4444;
+}

@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template-vite",
+  "name": "react-todo-lifecycle",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://BeibaRoman.github.io/react-homework-template-vite",
+  "homepage": "https://BeibaRoman.github.io/react-todo-lifecycle",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "nanoid": "^6.0.1",
     "normalize.css": "^8.0.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"

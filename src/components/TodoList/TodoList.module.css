@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.emptyState {
+  text-align: center;
+  font-size: 14px;
+  color: #a1a1aa;
+  padding: 32px 16px;
+}

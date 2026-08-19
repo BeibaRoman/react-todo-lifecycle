@@ -1,16 +1,41 @@
-# React + Vite
+# React Todo — Lifecycle Methods
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Навчальний проєкт на React: список завдань із модальним вікном, збереженням у localStorage та повною адаптивністю. Написаний на класових компонентах для практики методів життєвого циклу.
 
-Currently, two official plugins are available:
+## Демо
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 [Дивитись онлайн](https://beibaroman.github.io/react-todo-lifecycle/)
 
-## React Compiler
+## Технології
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 (Class Components)
+- Vite
+- CSS Modules
+- nanoid
+- React Portals
 
-## Expanding the ESLint configuration
+## Функціонал
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Додавання, видалення, позначення завдань виконаними
+- Модальне вікно для додавання завдання — закривається по Escape, кліку на фон або кнопці закриття
+- Завдання зберігаються в localStorage — не зникають при оновленні сторінки
+- Фільтр: All / Active / Completed
+- Лічильник активних завдань
+- Кнопка "Clear completed"
+- Повністю адаптивний вигляд (mobile-first)
+
+## Запуск локально
+
+\`\`\`bash
+git clone https://github.com/BeibaRoman/react-todo-lifecycle.git
+cd react-todo-lifecycle
+npm install
+npm run dev
+\`\`\`
+
+## Архітектурні рішення
+
+- `componentDidMount`/`componentDidUpdate` в `App` — читання й запис завдань у localStorage, з перевіркою на зміну посилання масиву, щоб уникнути зайвих записів
+- `componentDidMount`/`componentWillUnmount` в `Modal` — підписка та відписка від клавіші Escape, реалізовані через `React Portal` (`createPortal`), щоб модальне вікно рендерилось поза деревом `App`
+- Перевикористовуваний компонент `Button` з варіантами оформлення (`primary`, `ghost`, `icon`) замість дублювання стилів кнопок у кожному компоненті
+- Валідація форми додавання завдання без сторонніх бібліотек, з власним станом помилки

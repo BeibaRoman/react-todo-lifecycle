@@ -131,9 +131,3 @@ table {
 .wrapper main {
   flex-grow: 1;
 }
-
-[class*="__container"] {
-  max-width: 79.375rem; /* 1270px */
-  margin: 0 auto;
-  padding: 0 0.9375rem;
-}
